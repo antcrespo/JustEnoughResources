@@ -106,7 +106,8 @@ public class BiomeRestriction {
     }
 
     public List<String> toStringList() {
-        return biomes.stream().filter(biome -> !biome.toString().equals("")).map(biome -> "  " + I18n.get("biome." + biome.getRegistryName().toString().replace(":","."))).collect(Collectors.toList());
+        // TODO: fix this to string function
+        return biomes.stream().filter(biome -> !biome.toString().equals("")).map(biome -> "  " + I18n.get("biome." + biome.toString().replace(":","."))).collect(Collectors.toList());
     }
 
     @Override
