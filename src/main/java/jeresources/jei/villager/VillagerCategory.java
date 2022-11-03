@@ -62,7 +62,8 @@ public class VillagerCategory extends BlankJEIRecipeCategory<VillagerWrapper> {
                 .addItemStacks(recipeWrapper.getPois());
         }
 
-        IFocus<ItemStack> focus = focuses.getFocuses(VanillaTypes.ITEM).findFirst().orElse(null);
+        IFocus<ItemStack> focus = focuses.getFocuses(VanillaTypes.ITEM_STACK).findFirst().orElse(null);
+        recipeWrapper.setFocus(focus);
         List<Integer> possibleLevels = recipeWrapper.getPossibleLevels(focus);
         int y = 1 + Y_ITEM_DISTANCE * (6 - possibleLevels.size()) / 2;
         for (int i = 0; i < possibleLevels.size(); i++) {
