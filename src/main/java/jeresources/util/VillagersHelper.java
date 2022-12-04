@@ -31,7 +31,7 @@ public class VillagersHelper {
             reg.addVillagerEntry(new WanderingTraderEntry(getWanderingTrades()));
         } catch (Exception e) {
             LogHelper.warn("Failed loading wandering trader");
-            LogHelper.warn("Exception caught when registering wandering traderr", e);
+            LogHelper.warn("Exception caught when registering wandering trader", e);
         }
     }
 
@@ -47,13 +47,5 @@ public class VillagersHelper {
             .flatMap(x -> Arrays.stream(x))
             .toArray(VillagerTrades.ItemListing[]::new);
         return new Int2ObjectOpenHashMap<>(new int[]{1}, new VillagerTrades.ItemListing[][]{allWanderingTrades});
-    }
-
-    public static Set<BlockState> getPoiBlocks(PoiType poiType) {
-        return poiType.matchingStates();
-    }
-
-    public static Set<BlockState> getPoiBlocks(Predicate<Holder<PoiType>> heldJobSite) {
-        return getPoiBlocks(Registry.POINT_OF_INTEREST_TYPE.holders().filter(heldJobSite).findFirst().get().value());
     }
 }

@@ -1,7 +1,6 @@
 package jeresources.collection;
 
 import mezz.jei.api.recipe.IFocus;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
@@ -52,7 +51,7 @@ public class TradeList extends LinkedList<TradeList.Trade> {
         }
     }
 
-    private void addMerchantRecipe(MerchantOffers merchantOffers, VillagerTrades.ItemListing itemListing, RandomSource rand) {
+    private void addMerchantRecipe(MerchantOffers merchantOffers, VillagerTrades.ItemListing itemListing, Random rand) {
         MerchantOffer offer = itemListing.getOffer(entity, rand);
         if (offer != null) {
             merchantOffers.add(offer);
